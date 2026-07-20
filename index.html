@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>you have found me!</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    (function () {
+      var key = 'theme';
+      var stored;
+      try { stored = localStorage.getItem(key); } catch (e) { }
+      if (stored !== 'theme-light' && stored !== 'theme-dark') {
+        try { stored = window.matchMedia('(prefers-color-scheme: light)').matches ? 'theme-light' : 'theme-dark'; } catch (e) { stored = 'theme-dark'; }
+      }
+      document.documentElement.className = stored;
+    })();
+  </script>
+
+  <style>
+  
+    .banner {
+      position: relative;
+      width: 53%;
+      margin-top: 0;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+      aspect-ratio: 16 / 6;  
+      max-width: 800px;
+      
+    }
+  
+ 
+    .banner img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: bottom center;
+      display: block;
+      transform: translate(-50%, -50%);
+    }
+ 
+    @media (max-width: 720px) {
+      .banner {
+        aspect-ratio: 4 / 3;
+      }
+    }
+
+
+  </style>
+</head>
+
+
+<body>
+  <div class="page">
+    <header class="site-header">
+      <nav class="nav">
+        <a href="index.html" class="nav-link nav-link-active">home</a>
+        <a href="builds.html" class="nav-link">builds</a>
+        <a href="blogs.html" class="nav-link">blogs</a>
+        <!-- <a href="hi.html" class="nav-link">hi</a> -->
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <i class="fa-regular fa-moon theme-icon-moon"></i>
+          <i class="fa-regular fa-sun theme-icon-sun"></i>
+        </button>
+      </nav>
+    </header>
+
+    <div class="banner">
+      <img src="sky.png" alt="banner">
+    </div>
+
+    <main class="content">
+      <h1 class="hero-title" style="font-size: 40px; font-family: 'jersey1', sans-serif; padding-top: 2rem;">hey, i'm
+        khushi!</h1>
+
+      <section class="about">
+        <h2 class="section-title"></h2>
+        <p>> I love <span class="text-strong">learning new things.</span></p>
+        <p>> Been here since <span id="age-counter" style="color:rgb(244, 162, 10);">0.0000000000</span> years.</p>
+        <p>
+          > I spend a lot of time reading, thinking, and writing about things that genuinely fascinate me — physics, math, machine learning, space, philosophy, quantum computing<br>
+          > Writing is how i think. And sometimes the thinking gets interesting. If you want to read some of it, you can check out my <a style="color: var(--accent)" href="blogs.html">blogs</a>.
+        </p>
+        
+        <br>
+        <p>If this resonates with your work, your team, or something you're building, I'd love to chat : <a style="color: var(--accent)" href="https://cal.com/khusheyy">book a call</a>
+      </section>
+
+      <footer class="footer">
+        <div class="social-links">
+          <a href="https://github.com/Khusheyy" class="social-link" aria-label="GitHub" target="_blank"
+            rel="noreferrer">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://x.com/_khusheyyy" class="social-link" aria-label="Twitter" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="mailto:khusheyy18@gmail.com" class="social-link" aria-label="Email">
+            <i class="fa-regular fa-envelope"></i>
+          </a>
+          <a href="https://medium.com/@_khusheyyy" class="social-link" aria-label="Medium" target="_blank"
+            rel="noreferrer">
+            <i class="fa-brands fa-medium"></i>
+          </a>
+          <a href="https://buymeacoffee.com/_khusheyyy" class="social-link" aria-label="Buy Me a Coffee"
+            target="_blank" rel="noreferrer">
+            <i class="fa-solid fa-mug-hot"></i>
+          </a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <button type="button" class="command-palette-btn command-palette-fab" aria-label="Open navigator (command + k)">
+    <span class="key">⌘</span>
+    <span class="plus">+</span>
+    <span class="key">K</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

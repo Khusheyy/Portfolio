@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my journey on x • khushi</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        (function () {
+            var key = 'theme';
+            var stored;
+            try { stored = localStorage.getItem(key); } catch (e) { }
+            if (stored !== 'theme-light' && stored !== 'theme-dark') {
+                try { stored = window.matchMedia('(prefers-color-scheme: light)').matches ? 'theme-light' : 'theme-dark'; } catch (e) { stored = 'theme-dark'; }
+            }
+            document.documentElement.className = stored;
+        })();
+    </script>
+
+    <style>
+        .about {
+            opacity: 1;
+        }
+
+        /* card layout — normal flex flow, no absolute positioning,
+           so nothing clutters/overlaps while the tweet embed is loading */
+        .journey-card {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            margin: 0 auto 3rem auto;
+            width: 100%;
+            max-width: 700px;   /* fixed width — every row is identical, nothing shifts */
+            box-sizing: border-box;
+
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .journey-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* alternate tweet left/right, zigzag style */
+        .journey-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .journey-card .tweet-wrap {
+            flex: 0 0 auto;
+            width: 350px;
+            transform: scale(0.85);
+            transform-origin: top center;
+            margin: -1.5rem 0; /* compensates for the scale() so it doesn't leave a big gap */
+        }
+
+        .journey-card .caption {
+            flex: 1 1 260px;
+            opacity: 0.8;
+            font-size: 15px;
+            font-weight: var(--font-mono);
+            line-height: 1.7;
+            color: var(--muted);
+        }
+
+        .journey-card .caption a {
+            color: var(--accent);
+        }
+
+        @media (max-width: 720px) {
+            .journey-card,
+            .journey-card:nth-child(even) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .journey-card {
+                transition: none;
+                transform: none;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <header class="site-header">
+            <nav class="nav">
+                <a href="index.html" class="nav-link">home</a>
+                <a href="builds.html" class="nav-link">builds</a>
+                <a href="blogs.html" class="nav-link">blogs</a>
+                <!-- <a href="hi.html" class="nav-link nav-link-active">hi</a> -->
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fa-regular fa-moon theme-icon-moon"></i>
+                    <i class="fa-regular fa-sun theme-icon-sun"></i>
+                </button>
+            </nav>
+        </header>
+
+        <main class="content">
+            <h1 class="hero-title" style="padding-top: 2rem;">my journey on x</h1>
+
+            <section class="about">
+                <p>a public log of figuring things out! on x</p>
+                <br>
+
+                <!-- first year ml-presentation -->
+                <div class="journey-card">
+                    <div class="tweet-wrap">
+                        <blockquote class="twitter-tweet" data-theme="dark">
+                            <a href="https://twitter.com/_khusheyyy/status/1853789291941351450"></a>
+                        </blockquote>
+                    </div>
+                    <div class="caption">
+                        > 2024, first year of college when i was fafoing. started learning ml, dsa and networking was exploring tbh!
+                    </div>
+                </div>
+
+                <!-- my first blog -->
+                <div class="journey-card">
+                    <div class="tweet-wrap">
+                        <blockquote class="twitter-tweet" data-theme="dark">
+                            <a href="https://twitter.com/_khusheyyy/status/1927441012001034637"></a>
+                        </blockquote>
+                    </div>
+                    <div class="caption">
+                        > gave blog writing a shot and it was fun! wrote about the birth of the universe. read it here : <a href="https://www.notion.so/how-did-it-all-begin-1fe1ac2799c2805cb420d086993a3eb4">how did it all begin?</a>
+                    </div>
+                </div>
+
+                <!-- khusheyyy X bhindiai -->
+                <div class="journey-card">
+                    <div class="tweet-wrap">
+                        <blockquote class="twitter-tweet" data-theme="dark">
+                            <a href="https://twitter.com/_khusheyyy/status/1931772965441433692"></a>
+                        </blockquote>
+                    </div>
+                    <div class="caption">
+                        > khusheyyy X bhindiai
+                    </div>
+                </div>
+
+                <!-- bhindi merch -->
+                <div class="journey-card">
+                    <div class="tweet-wrap">
+                        <blockquote class="twitter-tweet" data-theme="dark">
+                            <a href="https://twitter.com/_khusheyyy/status/1986746685264167405"></a>
+                        </blockquote>
+                    </div>
+                    <div class="caption">
+                        > cool bhindi merch!!! checkout <a href="bhindi.io">bhindi.io</a>
+                    </div>
+                </div>
+
+                <!-- teaching -->
+                <div class="journey-card">
+                    <div class="tweet-wrap">
+                        <blockquote class="twitter-tweet" data-theme="dark">
+                            <a href="https://twitter.com/_khusheyyy/status/1951347022822552033"></a>
+                        </blockquote>
+                    </div>
+                    <div class="caption">
+                        > landed a teaching opportunity at a defence academy!!
+                    </div>
+                </div>
+
+                <!-- daily logs -->
+                <div class="journey-card">
+                    <div class="tweet-wrap">
+                        <blockquote class="twitter-tweet" data-theme="dark">
+                            <a href="https://twitter.com/_khusheyyy/status/1961146373275095049"></a>
+                        </blockquote>
+                    </div>
+                    <div class="caption">
+                        > started daily logs!
+                    </div>
+                </div>
+
+                <!-- runable --> 
+                <div class="journey-card">
+                    <div class="tweet-wrap"> 
+                        <blockquote class="twitter-tweet" data-theme="dark"> 
+                            <a href="https://twitter.com/_khusheyyy/status/2053020548150800808?s=20"></a> 
+                        </blockquote> 
+                    </div> 
+                    <div class="caption"> > khusheyyy X runable! 
+                    </div>
+                </div>
+
+                <p>made soo many cool friends along the way!! <br>follow me on x to be a part of this journey : <a style="color: var(--accent)" href="https://x.com/_khusheyyy">@_khusheyyy</a></p>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </section>
+        </main>
+
+        <button type="button" class="command-palette-btn command-palette-fab"
+            aria-label="Open navigator (command + k)">
+            <span class="key">⌘</span>
+            <span class="plus">+</span>
+            <span class="key">K</span>
+        </button>
+
+        <script src="script.js"></script>
+
+        <script>
+            // scroll-triggered fade-in for journey cards
+            document.addEventListener('DOMContentLoaded', function () {
+                var cards = document.querySelectorAll('.journey-card');
+
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target); // animate once
+                        }
+                    });
+                }, {
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -60px 0px'
+                });
+
+                cards.forEach(function (card) {
+                    observer.observe(card);
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>
