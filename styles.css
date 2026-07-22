@@ -590,3 +590,29 @@ html.theme-light .theme-toggle {
     opacity: 1;
   }
 }
+
+/* theme light and dark for navbar- glassmorphism */
+.theme-dark {
+  --nav-bg: rgba(17, 17, 17, 0.8);
+  --nav-border: rgba(255, 255, 255, .08);
+}
+
+.theme-light {
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --nav-border: rgba(0, 0, 0, .08);
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition: all 0.3s ease;
+}
