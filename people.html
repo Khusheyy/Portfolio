@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>say hi • khushi</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        (function () {
+            var key = 'theme';
+            var stored;
+            try { stored = localStorage.getItem(key); } catch (e) { }
+            if (stored !== 'theme-light' && stored !== 'theme-dark') {
+                try { stored = window.matchMedia('(prefers-color-scheme: light)').matches ? 'theme-light' : 'theme-dark'; } catch (e) { stored = 'theme-dark'; }
+            }
+            document.documentElement.className = stored;
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="page">
+        <header class="site-header">
+            <nav class="nav">
+                <a href="index.html" class="nav-link">home</a>
+                <a href="builds.html" class="nav-link">builds</a>
+                <a href="blogs.html" class="nav-link">blogs</a>
+                <!-- <a href="hi.html" class="nav-link nav-link-active">hi</a> -->
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fa-regular fa-moon theme-icon-moon"></i>
+                    <i class="fa-regular fa-sun theme-icon-sun"></i>
+                </button>
+            </nav>
+        </header>
+
+        <main class="content">
+            <h1 class="hero-title" style="padding-top: 2rem;">people who inspire me</h1>
+
+            <section class="about">
+                <p>say hi! i'm mostly active on twitter(x)</p>
+
+                <hr style="border: none; border-top: 1px solid currentColor; opacity: 0.15; margin-bottom: 1.5rem;">
+
+                <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                    <a href="https://x.com/_khusheyyy" target="_blank" rel="noopener noreferrer"
+                        style="display: flex; align-items: center; gap: 1rem; padding: 0.65rem 0; text-decoration: none; color: inherit;">
+                        <span
+                            style="min-width: 110px; color: var(--nav-link); text-decoration: underline;">twitter</span>
+                        <span style="opacity: 0.4;">–</span>
+                        <span style="opacity: 0.65;">@_khusheyyy</span>
+                    </a>
+
+                    <a href="https://medium.com/@_khusheyyy" target="_blank" rel="noopener noreferrer"
+                        style="display: flex; align-items: center; gap: 1rem; padding: 0.65rem 0; text-decoration: none; color: inherit;">
+                        <span
+                            style="min-width: 110px; color: var(--nav-link); text-decoration: underline;">medium</span>
+                        <span style="opacity: 0.4;">–</span>
+                        <span style="opacity: 0.65;">@_khusheyyy</span>
+                    </a>
+
+                    <a href="https://github.com/Khusheyy" target="_blank" rel="noopener noreferrer"
+                        style="display: flex; align-items: center; gap: 1rem; padding: 0.65rem 0; text-decoration: none; color: inherit;">
+                        <span
+                            style="min-width: 110px; color: var(--nav-link); text-decoration: underline;">github</span>
+                        <span style="opacity: 0.4;">–</span>
+                        <span style="opacity: 0.65;">Khusheyy</span>
+                    </a>
+
+                    </a>
+                    <a href="https://www.linkedin.com/in/khusheyyy/" target="_blank" rel="noopener noreferrer"
+                        style="display: flex; align-items: center; gap: 1rem; padding: 0.65rem 0; text-decoration: none; color: inherit;">
+                        <span
+                            style="min-width: 110px; color: var(--nav-link); text-decoration: underline;">linkedin</span>
+                        <span style="opacity: 0.4;">–</span>
+                        <span style="opacity: 0.65;">khusheyyy</span>
+                    </a>
+
+                    <a href="mailto:khusheyy18@gmail.com"
+                        style="display: flex; align-items: center; gap: 1rem; padding: 0.65rem 0; text-decoration: none; color: inherit;">
+                        <span style="min-width: 110px; color: var(--nav-link); text-decoration: underline;">email</span>
+                        <span style="opacity: 0.4;">–</span>
+                        <span style="opacity: 0.65;">khusheyy18@gmail.com</span>
+                    </a>
+
+                    <a href="https://buymeacoffee.com/_khusheyyy" class="social-link" aria-label="Buy Me a Coffee"
+                        target="_blank" rel="noreferrer"
+                        style="display: flex; align-items: center; gap: 1rem; padding: 0.65rem 0; text-decoration: none; color: inherit;">
+                        <span
+                            style="min-width: 110px; color: var(--nav-link); text-decoration: underline;">buymeacoffee</span>
+                        <span style="opacity: 0.4;">–</span>
+                        <span style="opacity: 0.65;">_khusheyyy</span>
+                </div>
+            </section>
+            </section>
+
+            <!--  -->
+
+
+
+
+            <button type="button" class="command-palette-btn command-palette-fab"
+                aria-label="Open navigator (command + k)">
+                <span class="key">⌘</span>
+                <span class="plus">+</span>
+                <span class="key">K</span>
+            </button>
+
+            <script src="script.js"></script>
+</body>
