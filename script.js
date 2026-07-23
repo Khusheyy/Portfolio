@@ -259,3 +259,4 @@ async function loadMediumBlogs() {
     if (loadingEl) loadingEl.textContent = "couldn't load posts right now.";
   }
 }
+
