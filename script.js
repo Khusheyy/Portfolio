@@ -51,6 +51,7 @@ var PALETTE_PAGES = [
   { label: "my journey on x", path: "myjourneyonx.html", slug: "/myjourneyonx" },
   { label: "people", path: "people.html", slug: "/people" },
   { label: "values", path: "values.html", slug: "/values" },
+  { label: "collections", path: "collections.html", slug: "/collections" },
 ];
 
 var paletteOverlay = null;
