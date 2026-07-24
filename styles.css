@@ -399,9 +399,10 @@ html.theme-light .theme-toggle {
 }
 
 .hero-title {
-  font-size: clamp(32px, 5vw, 40px);
+  /* font-size: clamp(32px, 5vw, 40px); */
+  font-size: clamp(16px, 3vw, 26px);
   font-weight: 600;
-  margin: 0 0 40px;
+  margin: 0 0 0px;
   letter-spacing: 0.06em;
   text-transform: lowercase;
 }
@@ -665,4 +666,253 @@ html.theme-light {
   margin-right: 0rem;
   display: flex;
   gap: 2rem;
+}
+
+/* builds page */
+/* ===========================
+   Projects Section
+=========================== */
+
+.projects {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 30px;
+}
+
+
+/* ===========================
+   Card
+=========================== */
+
+.project-card {
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  transition: all .25s ease;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: transparent;
+}
+
+.project-card:hover {
+
+  transform: translateY(-5px);
+
+  border-color: rgba(255, 255, 255, .15);
+}
+
+
+/* ===========================
+   Image
+=========================== */
+
+.project-card img {
+
+  width: 100%;
+
+  height: 255px;
+
+  object-fit: cover;
+
+  display: block;
+  border-radius: 12px;
+}
+
+
+/* ===========================
+   Content
+=========================== */
+
+
+
+
+/* ===========================
+   Header
+=========================== */
+
+.project-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 0px;
+
+}
+
+.project-header h3 {
+
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  margin: 0;
+
+  line-height: 1.1;
+}
+
+
+
+
+/* ===========================
+   Live Status
+=========================== */
+
+.status {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: .95rem;
+
+  opacity: .8;
+}
+
+.dot {
+
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #19d15f;
+}
+
+
+
+
+/* ===========================
+   Description
+=========================== */
+
+.project-description {
+  font-size: 14px;
+  font-weight: var(--font-mono);
+  line-height: 1.7;
+  color: var(--muted);
+  opacity: .82;
+  margin-bottom: 10px;
+  min-height: 95px;
+}
+
+
+/* ===========================
+   Tags
+=========================== */
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.project-tags span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 13px;
+
+  font-size: 0.7rem;
+  font-weight: 500;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 9px;
+}
+
+/* DARK */
+
+.theme-dark .project-tags span {
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .08);
+  color: #f3f4f6;
+}
+
+.theme-dark .project-links a {
+  color: #8b8b90;
+}
+
+.theme-dark .project-links a:hover {
+  color: #d4d4d8;
+}
+
+
+/* LIGHT */
+
+.theme-light .project-tags span {
+  background: rgba(0, 0, 0, .04);
+  border: 1px solid rgba(0, 0, 0, .10);
+  color: #111827;
+}
+
+.theme-light .project-links a {
+  color: #6b7280;
+}
+
+.theme-light .project-links a:hover {
+  color: #111827;
+}
+
+/* ===========================
+   Links
+=========================== */
+
+.project-links a {
+  color: #8b8b90;
+  font-size: 0.8rem;
+  transition: .2s ease;
+  text-decoration: none;
+  padding-left: 0.6rem;
+  /* padding-top: 1rem; */
+}
+
+.project-links a:hover {
+  color: var(--fg);
+  text-decoration: underline;
+}
+
+
+
+.project-links a:hover {
+  opacity: 1;
+}
+
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:900px) {
+
+  .projects-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
 }
